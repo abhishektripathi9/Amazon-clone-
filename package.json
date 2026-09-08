@@ -1,0 +1,25 @@
+{
+  "name": "amazon-clone-3d",
+  "version": "2.0.0",
+  "description": "Amazon 2.0 - 3D Interactive E-Commerce Platform with Men/Women Collections, 1-Click Express Buy, UPI Payments, Village Doorstep Delivery, and Seller Central Studio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'Build complete'"
+  },
+  "keywords": [
+    "amazon-clone",
+    "ecommerce",
+    "3d-shopping",
+    "threejs",
+    "upi-payments",
+    "seller-central",
+    "portfolio"
+  ],
+  "author": "Abhishek Tripathi",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

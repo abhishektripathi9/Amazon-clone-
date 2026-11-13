@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
 const PORT = process.env.PORT || 3000;
 
@@ -45,19 +46,33 @@ const server = http.createServer((req, res) => {
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+    const mtime = stats.mtime.toUTCString();
 
-    fs.readFile(filePath, (readErr, content) => {
-      if (readErr) {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end('500 Internal Server Error');
-        return;
-      }
-      res.writeHead(200, { 
-        'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=3600'
-      });
-      res.end(content);
-    });
+    // Instant 304 on reload if unmodified
+    if (req.headers['if-modified-since'] === mtime) {
+      res.writeHead(304, { 'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=86400' });
+      res.end();
+      return;
+    }
+
+    const acceptEncoding = req.headers['accept-encoding'] || '';
+    const isCompressible = /text|javascript|json|xml|svg/i.test(contentType);
+
+    const headers = {
+      'Content-Type': contentType,
+      'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=86400',
+      'Last-Modified': mtime,
+      'X-Content-Type-Options': 'nosniff'
+    };
+
+    if (isCompressible && acceptEncoding.includes('gzip')) {
+      headers['Content-Encoding'] = 'gzip';
+      res.writeHead(200, headers);
+      fs.createReadStream(filePath).pipe(zlib.createGzip({ level: 6 })).pipe(res);
+    } else {
+      res.writeHead(200, headers);
+      fs.createReadStream(filePath).pipe(res);
+    }
   });
 });
 

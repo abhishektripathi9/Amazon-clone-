@@ -236,6 +236,7 @@ class ThreeSpatialEngine {
 
   animateHeroScene() {
     requestAnimationFrame(() => this.animateHeroScene());
+    if (document.hidden) return; // Instant power save when tab is inactive
 
     // Continuous smooth inertia
     if (!this.heroIsDragging) {

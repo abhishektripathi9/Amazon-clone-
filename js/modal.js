@@ -1,5 +1,5 @@
 /**
- * AMAZON CLONE - MODALS, DRAWERS & INTERACTIVE PANELS
+ * UDAANMART - MODALS, DRAWERS & INTERACTIVE PANELS
  * Handles Quick View popover, Cart slide-out drawer, Department side-menu,
  * Delivery location selector, and Wishlist / Orders modal.
  */
@@ -150,40 +150,11 @@ class ModalEngine {
       };
     }
 
-    // Bind 3D Studio vs Photo Gallery view tabs
-    const photoTab = modal.querySelector('#qv-tab-photos');
-    const studioTab = modal.querySelector('#qv-tab-3d');
+    // Ensure photo gallery and thumbnails are visible
     const photoBox = modal.querySelector('.qv-main-image-box');
     const thumbStrip = modal.querySelector('.qv-thumbnails-strip');
-    const studioBox = modal.querySelector('#qv-3d-studio-container');
-
-    if (photoTab && studioTab && photoBox && studioBox) {
-      // Default to photo view
-      photoTab.classList.add('is-active');
-      studioTab.classList.remove('is-active');
-      photoBox.style.display = 'flex';
-      if (thumbStrip) thumbStrip.style.display = 'flex';
-      studioBox.classList.remove('is-active');
-
-      photoTab.onclick = () => {
-        photoTab.classList.add('is-active');
-        studioTab.classList.remove('is-active');
-        photoBox.style.display = 'flex';
-        if (thumbStrip) thumbStrip.style.display = 'flex';
-        studioBox.classList.remove('is-active');
-      };
-
-      studioTab.onclick = () => {
-        studioTab.classList.add('is-active');
-        photoTab.classList.remove('is-active');
-        photoBox.style.display = 'none';
-        if (thumbStrip) thumbStrip.style.display = 'none';
-        studioBox.classList.add('is-active');
-        if (window.amzThree) {
-          window.amzThree.resizeStudio();
-        }
-      };
-    }
+    if (photoBox) photoBox.style.display = 'flex';
+    if (thumbStrip) thumbStrip.style.display = 'flex';
 
     this.showModal(modal);
   }

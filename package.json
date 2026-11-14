@@ -1,7 +1,7 @@
 {
-  "name": "amazon-clone-3d",
+  "name": "udaanmart",
   "version": "2.0.0",
-  "description": "Amazon 2.0 - 3D Interactive E-Commerce Platform with Men/Women Collections, 1-Click Express Buy, UPI Payments, Village Doorstep Delivery, and Seller Central Studio",
+  "description": "UdaanMart - E-Commerce Platform with Men/Women Collections, 1-Click Express Buy, UPI Payments, Village Doorstep Delivery, and Seller Central Studio",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,7 +9,7 @@
     "build": "echo 'Build complete'"
   },
   "keywords": [
-    "amazon-clone",
+    "udaanmart",
     "ecommerce",
     "3d-shopping",
     "threejs",

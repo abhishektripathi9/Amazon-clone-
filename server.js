@@ -77,5 +77,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`🚀 Amazon Clone server is active on port ${PORT}`);
+  console.log(`🚀 UdaanMart server is active on port ${PORT}`);
 });

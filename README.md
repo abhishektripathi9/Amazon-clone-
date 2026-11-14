@@ -1,8 +1,8 @@
-# 🛒 Amazon 2.0 - 3D Interactive Freelance Portfolio Showcase
+# 🛒 UdaanMart - E-Commerce Platform
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/abhishektripathi9/Amazon-clone-)
 
-An enterprise-grade, ultra-modern **Amazon Clone** powered by **Three.js WebGL 3D graphics, real-time 360° product inspection, 60fps card tilt physics, 1-Click Express Buy, UPI/International Payments, and a Seller Central Studio**. Built specifically to demonstrate full-stack e-commerce frontend engineering to freelancing clients.
+An enterprise-grade, ultra-modern **UdaanMart Platform** powered by **Three.js WebGL 3D graphics, real-time 360° product inspection, 60fps card tilt physics, 1-Click Express Buy, UPI/International Payments, and a Seller Central Studio**. Built specifically to demonstrate full-stack e-commerce frontend engineering to freelancing clients.
 
 ---
 
@@ -27,17 +27,6 @@ This project is configured for **1-Click Instant Deployment** on [Render](https:
 
 ## ✨ Features That Win Freelance Contracts
 
-### 🌐 Three.js 3D Spatial Arena (Hero Centerpiece)
-- **Interactive 3D WebGL Model**: A floating, metallic flagship spatial audio unit with brushed aluminum earcups and glowing LED rings.
-- **360° Spherical Orbit Drag**: Click and drag to spin and inspect the gadget from any angle with smooth rotational inertia.
-- **Parallax Particle Galaxy**: 450 luminous stars orbiting in 3D space, responding to cursor movements.
-- **Interactive Spatial Hotspots**: Pulsing beacon pins that expand live feature callouts on hover.
-
-### 🎴 60fps 3D Perspective Card Tilt Physics
-- Every product card dynamically tilts in 3D perspective following mouse coordinates.
-- **Dynamic Specular Light Glare**: Realistic light sheen glides across the card surface in real-time.
-- **Layered Spatial Depth**: Media, badges, ratings, and buttons lift forward along the Z-axis (`translateZ`).
-
 ### 📦 Village & Rural Doorstep Logistics (155,000+ PIN Codes)
 - **India Village & Global Rural Coverage**: Doorstep delivery engine covering 155,000+ India Post PIN codes, Gram Panchayats, Tehsils, and remote international postal routes.
 - **Delivery Time Guarantee**: Live estimated delivery dates displayed in both the Hero Arena, 1-Click Express modal, and Checkout.
@@ -57,7 +46,7 @@ This project is configured for **1-Click Instant Deployment** on [Render](https:
 
 ### 👔 Dual-Audience Collections (Men & Women)
 - Dedicated Men's & Women's quick category filters with real-time counters.
-- Special curated sections for **Karigar Handmade & Rural Artisans** to empower village artisans.
+- Special curated sections for **UdaanMart Karigar Handmade & Rural Artisans** to empower village artisans.
 
 ---
 

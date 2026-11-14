@@ -1,5 +1,5 @@
 /**
- * AMAZON CLONE - THREE.JS 3D SPATIAL ARENA & STUDIO ENGINE
+ * UDAANMART - THREE.JS 3D SPATIAL ARENA & STUDIO ENGINE
  * Interactive 3D WebGL scenes:
  * 1. Hero 3D Spatial Gadget with 360° mouse drag, particle galaxy & ambient inertia.
  * 2. Quick View 3D Studio with wireframe & dynamic lighting modes.

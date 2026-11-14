@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: amazon-clone-3d
+    name: udaanmart
     runtime: static
     buildCommand: ""
     staticPublishPath: ./

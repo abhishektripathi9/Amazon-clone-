@@ -52,8 +52,8 @@
       <div class="nav-delivery-box" id="nav-deliver-location-btn" role="button" tabindex="0" title="Change delivery location">
         <span class="nav-pin-icon">📍</span>
         <div class="nav-delivery-text">
-          <span class="delivery-line-1">Deliver to</span>
-          <span class="delivery-line-2" id="nav-delivery-city">New York 10001</span>
+          <span class="delivery-line-1">डिलीवरी स्थान</span>
+          <span class="delivery-line-2" id="nav-delivery-city">New Delhi 110001</span>
         </div>
       </div>
 
@@ -93,15 +93,29 @@
 
       <!-- Action Navigation Links -->
       <div class="nav-actions-group">
+        <!-- Language Selector Pill -->
+        <div class="nav-pill-btn" id="nav-language-picker" title="Change Language / भाषा बदलें">
+          <span id="nav-current-lang-flag">🇮🇳</span>
+          <select class="currency-select-inline" id="language-selector" aria-label="Select language">
+            <option value="hi" selected>हिन्दी (HI)</option>
+            <option value="en">English (EN)</option>
+            <option value="es">Español (ES)</option>
+            <option value="fr">Français (FR)</option>
+            <option value="de">Deutsch (DE)</option>
+            <option value="ja">日本語 (JA)</option>
+            <option value="ar">العربية (AR)</option>
+          </select>
+        </div>
+
         <!-- Currency Converter Pill -->
         <div class="nav-pill-btn" title="Change currency">
-          <span id="nav-current-currency-symbol">$</span>
-          <span id="nav-current-currency-code" style="display:none">USD</span>
+          <span id="nav-current-currency-symbol">₹</span>
+          <span id="nav-current-currency-code" style="display:none">INR</span>
           <select class="currency-select-inline currency-selector" aria-label="Select currency">
+            <option value="INR" selected>INR (₹)</option>
             <option value="USD">USD ($)</option>
             <option value="EUR">EUR (€)</option>
             <option value="GBP">GBP (£)</option>
-            <option value="INR">INR (₹)</option>
             <option value="JPY">JPY (¥)</option>
             <option value="CAD">CAD (CA$)</option>
           </select>
@@ -1484,38 +1498,72 @@
        MODAL: DELIVERY LOCATION SELECTOR
        ======================================================================== -->
   <div class="modal" id="location-modal" role="dialog" aria-modal="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-large">
       <div class="modal-header">
-        <h3 class="modal-title">Choose Your Location</h3>
+        <h3 class="modal-title">🌍 Choose Your Delivery Location</h3>
         <button class="modal-close-btn" data-close-modal aria-label="Close modal">×</button>
       </div>
 
       <div class="modal-body">
-        <div style="background: linear-gradient(135deg, rgba(254, 189, 105, 0.15), rgba(0, 242, 254, 0.12)); border: 1px solid rgba(254, 189, 105, 0.4); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 16px; font-size: 0.85rem; color: var(--text-primary); display: flex; align-items: center; gap: 10px;">
-          <span style="font-size: 1.4rem;">🌐</span>
-          <span><strong>Automatic Currency Switching:</strong> Selecting your delivery country automatically converts all catalog prices, cart items, and deals to your local currency!</span>
+        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(16, 185, 129, 0.12)); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 18px; font-size: 0.88rem; color: var(--text-primary); display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 1.8rem;">🚀</span>
+          <div>
+            <strong id="location-guarantee-heading">100% Worldwide & Village Doorstep Delivery Guaranteed:</strong>
+            <div id="location-guarantee-desc" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px;">
+              Delivering to EVERY PIN code & Gram Panchayat across India via India Post Speed Post, and across 195+ countries worldwide via DHL/FedEx. Selecting any location automatically switches language and currency!
+            </div>
+          </div>
         </div>
 
         <form id="location-form">
           <div style="display: flex; gap: 8px;">
-            <input type="text" id="location-zip-input" class="form-input" placeholder="Type city or country (e.g. Mumbai, London, Paris, Tokyo, 400001, 10001)..." required />
-            <button type="submit" class="amz-btn amz-btn-primary" style="width: auto; white-space: nowrap; padding: 0 20px;">
-              Apply
+            <input type="text" id="location-zip-input" class="form-input" placeholder="Type ANY Village, City, PIN or ZIP code worldwide (e.g. Varanasi, 221001, Tokyo, Paris, London, Dubai, 10001)..." required />
+            <button type="submit" class="amz-btn amz-btn-primary" id="btn-apply-location" style="width: auto; white-space: nowrap; padding: 0 24px;">
+              Apply Location
             </button>
           </div>
         </form>
 
         <div style="margin-top: 22px;">
-          <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Select a global destination:</span>
-          <div class="location-chips-grid" style="margin-top: 10px;">
-            <button class="location-chip-btn" data-preset-location="Mumbai, India" data-currency="INR">🇮🇳 Mumbai, India (₹ INR)</button>
-            <button class="location-chip-btn" data-preset-location="New York, USA" data-currency="USD">🇺🇸 New York, USA ($ USD)</button>
-            <button class="location-chip-btn" data-preset-location="London, UK" data-currency="GBP">🇬🇧 London, UK (£ GBP)</button>
-            <button class="location-chip-btn" data-preset-location="Paris, France" data-currency="EUR">🇫🇷 Paris, France (€ EUR)</button>
-            <button class="location-chip-btn" data-preset-location="Berlin, Germany" data-currency="EUR">🇩🇪 Berlin, Germany (€ EUR)</button>
-            <button class="location-chip-btn" data-preset-location="Tokyo, Japan" data-currency="JPY">🇯🇵 Tokyo, Japan (¥ JPY)</button>
-            <button class="location-chip-btn" data-preset-location="Toronto, Canada" data-currency="CAD">🇨🇦 Toronto, Canada (CA$ CAD)</button>
-            <button class="location-chip-btn" data-preset-location="Seattle, USA" data-currency="USD">🇺🇸 Seattle, USA ($ USD)</button>
+          <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">
+            Quick Destinations (Auto Language, Currency & Carrier):
+          </div>
+          <div class="location-chips-grid">
+            <!-- India Villages & Cities -->
+            <button type="button" class="location-chip-btn" data-preset-location="Varanasi Village Cluster, UP (221001)" data-currency="INR" data-lang="hi">🇮🇳 वाराणसी देहात (Varanasi Rural - ₹ INR - हिन्दी)</button>
+            <button type="button" class="location-chip-btn" data-preset-location="New Delhi (110001)" data-currency="INR" data-lang="hi">🇮🇳 नई दिल्ली (New Delhi - ₹ INR - हिन्दी)</button>
+            <button type="button" class="location-chip-btn" data-preset-location="Mumbai, Maharashtra (400001)" data-currency="INR" data-lang="hi">🇮🇳 मुंबई (Mumbai - ₹ INR - हिन्दी)</button>
+            <button type="button" class="location-chip-btn" data-preset-location="Bengaluru, Karnataka (560001)" data-currency="INR" data-lang="hi">🇮🇳 बेंगलुरु (Bengaluru - ₹ INR - हिन्दी)</button>
+            <button type="button" class="location-chip-btn" data-preset-location="Azamgarh Rural Tehsil, UP (276001)" data-currency="INR" data-lang="hi">🇮🇳 आज़मगढ़ ग्रामीण (Azamgarh Village - ₹ INR)</button>
+            <button type="button" class="location-chip-btn" data-preset-location="Jaipur Crafts Hub (302001)" data-currency="INR" data-lang="hi">🇮🇳 जयपुर (Jaipur - ₹ INR - हिन्दी)</button>
+
+            <!-- USA -->
+            <button type="button" class="location-chip-btn" data-preset-location="New York, USA (10001)" data-currency="USD" data-lang="en">🇺🇸 New York, USA ($ USD - English)</button>
+            <button type="button" class="location-chip-btn" data-preset-location="Los Angeles, USA (90001)" data-currency="USD" data-lang="en">🇺🇸 Los Angeles, USA ($ USD - English)</button>
+
+            <!-- United Kingdom -->
+            <button type="button" class="location-chip-btn" data-preset-location="London, UK (SW1A 1AA)" data-currency="GBP" data-lang="en">🇬🇧 London, UK (£ GBP - English)</button>
+
+            <!-- Spain / Latin America -->
+            <button type="button" class="location-chip-btn" data-preset-location="Madrid, Spain (28001)" data-currency="EUR" data-lang="es">🇪🇸 Madrid, España (€ EUR - Español)</button>
+
+            <!-- France -->
+            <button type="button" class="location-chip-btn" data-preset-location="Paris, France (75001)" data-currency="EUR" data-lang="fr">🇫🇷 Paris, France (€ EUR - Français)</button>
+
+            <!-- Germany -->
+            <button type="button" class="location-chip-btn" data-preset-location="Berlin, Germany (10115)" data-currency="EUR" data-lang="de">🇩🇪 Berlin, Deutschland (€ EUR - Deutsch)</button>
+
+            <!-- Japan -->
+            <button type="button" class="location-chip-btn" data-preset-location="Tokyo, Japan (100-0001)" data-currency="JPY" data-lang="ja">🇯🇵 東京 (Tokyo, Japan - ¥ JPY - 日本語)</button>
+
+            <!-- UAE & Middle East -->
+            <button type="button" class="location-chip-btn" data-preset-location="Dubai, UAE" data-currency="USD" data-lang="ar">🇦🇪 دبي (Dubai, UAE - $ USD - العربية)</button>
+
+            <!-- Canada -->
+            <button type="button" class="location-chip-btn" data-preset-location="Toronto, Canada (M5H 2N2)" data-currency="CAD" data-lang="en">🇨🇦 Toronto, Canada (CA$ CAD - English)</button>
+
+            <!-- Australia -->
+            <button type="button" class="location-chip-btn" data-preset-location="Sydney, Australia (2000)" data-currency="USD" data-lang="en">🇦🇺 Sydney, Australia ($ USD - English)</button>
           </div>
         </div>
       </div>
@@ -2101,7 +2149,8 @@ Easy 30-Day Replacements</textarea>
 
 
   <!-- Application Logic Scripts -->
-  <script src="js/products-data.js?v=3.1"></script>
+  <script src="js/i18n.js?v=3.2"></script>
+  <script src="js/products-data.js?v=3.2"></script>
   <script src="js/cart.js?v=3.1"></script>
   <script src="js/search-filter.js?v=3.1"></script>
   <script src="js/modal.js?v=3.1"></script>

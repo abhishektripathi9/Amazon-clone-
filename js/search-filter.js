@@ -508,10 +508,10 @@ class SearchFilterEngine {
 
         <div class="prod-card-actions">
           <button class="amz-btn amz-btn-primary add-to-cart-btn" data-add-to-cart="${prod.id}">
-            Add to Cart
+            ${window.udaanI18n ? window.udaanI18n.t('add_to_cart') : 'Add to Cart'}
           </button>
           <button class="amz-btn amz-btn-buy-now buy-now-btn" data-buy-now="${prod.id}">
-            Buy Now
+            ${window.udaanI18n ? window.udaanI18n.t('buy_now') : '⚡ Buy Now'}
           </button>
         </div>
       </article>

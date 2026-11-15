@@ -1,12 +1,13 @@
 /**
- * UDAANMART - INTERNATIONALIZATION (i18n) & GLOBAL DELIVERY ENGINE
- * Automatically switches language and currency based on user delivery country / PIN code.
- * Supports: Hindi (hi), English (en), Spanish (es), French (fr), German (de), Japanese (ja), Arabic (ar).
+ * UDAANMART - COMPREHENSIVE INTERNATIONALIZATION (i18n) & GLOBAL DELIVERY ENGINE
+ * Automatically switches full-page language & currency whenever country/location is selected.
+ * Translates: Header, Subnav, Hero Carousel, Quad Cards, Deals Strip, Product Cards,
+ * Cart Drawer, QuickView Modal, Checkout Wizard, and Footer.
  */
 
 const UDAAN_TRANSLATIONS = {
   hi: {
-    name: 'हिन्दी',
+    name: 'हिन्दी (Hindi)',
     flag: '🇮🇳',
     deliver_to: 'डिलीवरी स्थान',
     search_placeholder: 'UdaanMart पर प्रोडक्ट, ब्रांड या डील खोजें...',
@@ -34,18 +35,76 @@ const UDAAN_TRANSLATIONS = {
     cart: 'कार्ट',
     add_to_cart: 'कार्ट में डालें',
     buy_now: '⚡ अभी खरीदें',
-    deal_title: '⚡ आज की धमाकेदार डील्स',
-    deal_sub: 'सीमित समय के ऑफ़र - स्टॉक खत्म होने से पहले ऑर्डर करें',
-    deal_ends: 'ऑफ़र समाप्त होगा:',
-    free_delivery_claim: '100% मुफ़्त डिलीवरी उपलब्ध',
     quickview: 'क्विक व्यू 👁️',
-    choose_location: 'अपना डिलीवरी स्थान चुनें',
-    worldwide_guarantee: '🌍 दुनिया के हर देश और भारत के सभी गाँवों में डिलीवरी गारंटी:',
-    worldwide_desc: 'हम भारत के 1,55,000+ पिन कोड, ग्राम पंचायतों व कस्बों में इंडिया पोस्ट स्पीड पोस्ट से और विश्व के 195+ देशों में फेडेक्स/डीएचएल से सीधे घर तक डिलीवरी करते हैं।',
-    apply_btn: 'लागू करें',
+
+    // Hero Slides
+    hero_tag_1: '⚡ फेस्टिव महा बचत',
+    hero_title_1: 'टॉप इलेक्ट्रॉनिक्स और स्मार्ट गैजेट्स',
+    hero_desc_1: 'प्रीमियम हेडफ़ोन, 4K टीवी, स्मार्टफ़ोन और होम गैजेट्स पर 60% तक की भारी छूट।',
+    hero_cta_1a: 'इलेक्ट्रॉनिक्स खरीदें →',
+    hero_cta_1b: '⚡ आज की डील्स',
+
+    hero_tag_2: '✨ फ़ैशन और लाइफस्टाइल',
+    hero_title_2: 'अपना रोज़मर्रा का स्टाइल निखारें',
+    hero_desc_2: 'पुरुषों और महिलाओं के लिए ट्रेंडी कपड़े, डिज़ाइनर घड़ियाँ, जूते और एक्सेसरीज़।',
+    hero_cta_2a: 'फ़ैशन एक्सप्लोर करें →',
+    hero_cta_2b: 'लक्ज़री घड़ियाँ व बैग्स',
+
+    hero_tag_3: '🇮🇳 उड़ानमार्ट कारीगर',
+    hero_title_3: 'मास्टर ग्रामीण बुनकरों और शिल्पकारों से सीधा',
+    hero_desc_3: '100% शुद्ध बनारसी सिल्क साड़ियां, कोल्हापुरी चप्पलें और जयपुर की नीली मिट्टी के बर्तन।',
+    hero_cta_3a: 'कारीगर उत्पाद देखें →',
+    hero_cta_3b: 'हथकरघा संग्रह',
+
+    // Category Quad Tiles
+    tile_1_title: '👗 कपड़े और रोज़मर्रा का फ़ैशन',
+    tile_1_link: 'शर्ट, कुर्तियां और डेनिम देखें →',
+    tile_2_title: '🍳 घर और रसोई का सामान',
+    tile_2_link: 'कुकवेयर, मिक्सर और बर्तन देखें →',
+    tile_3_title: '💄 सौंदर्य, स्किनकेयर और ग्रूमिंग',
+    tile_3_link: 'डाइसन, स्किन क्रीम व ट्रिमर देखें →',
+    tile_4_title: '🏋️ खेलकूद, फ़िटनेस व जिम',
+    tile_4_link: 'डम्बल, स्मार्टवॉच व योगा मैट →',
+    tile_5_title: '💻 हाई-परफॉर्मेंस लैपटॉप व टेक',
+    tile_5_link: 'मैकबुक प्रो, आईपैड व कैमरा →',
+    tile_6_title: '🎧 प्रो ऑडियो व साउंड सिस्टम्स',
+    tile_6_link: 'सोनी हेडफोन व बोस स्पीकर्स →',
+    tile_7_title: '🏠 स्मार्ट होम व रोबोट वैक्यूम',
+    tile_7_link: 'इको स्पीकर्स व रोबोट क्लीनर्स →',
+    tile_8_title: '🎮 प्रो गेमिंग व लक्जरी स्टाइल',
+    tile_8_link: 'PS5, गेमिंग कंसोल व घड़ियाँ →',
+
+    // Deals of the day
+    deal_title: '⚡ आज की धमाकेदार डील्स',
+    deal_sub: 'सीमित समय के ऑफ़र - स्टॉक खत्म होने से पहले तुरंत ऑर्डर करें',
+
+    // Cart Drawer
+    cart_drawer_title: 'शॉपिंग कार्ट',
+    cart_empty_title: 'आपकी UdaanMart कार्ट खाली है',
+    cart_empty_desc: 'आपकी कार्ट अभी खाली है। ताज़ा डील्स और ट्रेंडिंग प्रोडक्ट्स देखें।',
+    cart_empty_btn: 'अभी खरीदारी शुरू करें',
+    cart_subtotal: 'उप-योग (Subtotal):',
+    cart_checkout_btn: 'चेकआउट के लिए आगे बढ़ें →',
+
+    // Checkout
+    btn_to_payment: 'भुगतान विधि चुनें →',
+    btn_place_order: 'ऑर्डर दें और भुगतान करें 🔒',
+
+    // Modals
+    choose_location: '🌍 अपना डिलीवरी स्थान चुनें',
+    worldwide_guarantee: '100% मुफ़्त डिलीवरी गारंटी:',
+    worldwide_desc: 'भारत के 1,55,000+ पिन कोड, ग्राम पंचायतों व कस्बों में इंडिया पोस्ट स्पीड पोस्ट से और विश्व के 195+ देशों में फेडेक्स/डीएचएल से सीधे घर तक डिलीवरी।',
+    apply_btn: 'स्थान लागू करें',
+
+    // Footer
+    footer_col_1: 'हमारे बारे में',
+    footer_col_2: 'हमारे साथ व्यापार करें',
+    footer_col_3: 'भुगतान उत्पाद',
+    footer_col_4: 'मदद और सहायता',
     back_to_top: 'वापस ऊपर जाएँ ↑',
     footer_tagline: '© 2026 UdaanMart. सर्वाधिकार सुरक्षित।'
   },
+
   en: {
     name: 'English',
     flag: '🇺🇸',
@@ -75,18 +134,69 @@ const UDAAN_TRANSLATIONS = {
     cart: 'Cart',
     add_to_cart: 'Add to Cart',
     buy_now: '⚡ Buy Now',
+    quickview: 'Quick View 👁️',
+
+    hero_tag_1: '⚡ Festive Mega Savings',
+    hero_title_1: 'Top Electronics & Smart Gadgets',
+    hero_desc_1: 'Save up to 60% on premium audio, 4K displays, smartphones, and accessories with free same-day express delivery.',
+    hero_cta_1a: 'Shop Electronics →',
+    hero_cta_1b: '⚡ Lightning Deals',
+
+    hero_tag_2: '✨ Fashion & Lifestyle',
+    hero_title_2: 'Elevate Your Everyday Style',
+    hero_desc_2: 'Explore curated collections for Men & Women, luxury timepieces, denim, footwear, and designer accessories.',
+    hero_cta_2a: 'Explore Fashion →',
+    hero_cta_2b: 'Luxury Watches & Bags',
+
+    hero_tag_3: '🇮🇳 UdaanMart Karigar',
+    hero_title_3: 'Direct from Master Indian Artisans',
+    hero_desc_3: 'Authentic pure Banarasi silk sarees, Kolhapuri craft, Jaipur blue pottery, and handcrafted heritage pieces.',
+    hero_cta_3a: 'Support Rural Artisans →',
+    hero_cta_3b: 'Browse Handlooms',
+
+    tile_1_title: '👗 Clothing & Everyday Fashion',
+    tile_1_link: 'Shop shirts, dresses & denim →',
+    tile_2_title: '🍳 Kitchen & Everyday Essentials',
+    tile_2_link: 'Explore cookware, espresso & fryers →',
+    tile_3_title: '💄 Beauty, Skincare & Grooming',
+    tile_3_link: 'Discover Dyson, CeraVe & trimmers →',
+    tile_4_title: '🏋️ Sports, Fitness & Active Life',
+    tile_4_link: 'Shop dumbbells, Garmin & yoga mats →',
+    tile_5_title: '💻 High-Performance Tech',
+    tile_5_link: 'Explore MacBook Pro, iPad & Canon →',
+    tile_6_title: '🎧 Pro Audio & Sound Systems',
+    tile_6_link: 'Shop Sony ANC & Bose speakers →',
+    tile_7_title: '🏠 Smart Home & Robot Cleaners',
+    tile_7_link: 'Explore Roborock & Echo devices →',
+    tile_8_title: '🎮 Pro Gaming & Luxury Style',
+    tile_8_link: 'View PS5, OLED screens & watches →',
+
     deal_title: '⚡ Deals of the Day',
     deal_sub: 'Limited-time lightning discounts on top electronics and apparel',
-    deal_ends: 'Deals end in:',
-    free_delivery_claim: 'FREE Delivery Available',
-    quickview: 'Quick View 👁️',
-    choose_location: 'Choose Your Delivery Location',
-    worldwide_guarantee: '🌍 100% Guaranteed Worldwide & Village Delivery:',
-    worldwide_desc: 'Delivering to 195+ countries worldwide via DHL/FedEx Express and 155,000+ village pincodes & Gram Panchayats across India via Speed Post.',
-    apply_btn: 'Apply',
+
+    cart_drawer_title: 'Shopping Cart',
+    cart_empty_title: 'Your UdaanMart Cart is empty',
+    cart_empty_desc: 'Your shopping cart is currently waiting for something great. Explore lightning deals or popular electronics.',
+    cart_empty_btn: 'Start Shopping Now',
+    cart_subtotal: 'Subtotal:',
+    cart_checkout_btn: 'Proceed to Checkout →',
+
+    btn_to_payment: 'Continue to Payment Method →',
+    btn_place_order: 'Place Your Order and Pay 🔒',
+
+    choose_location: '🌍 Choose Your Delivery Location',
+    worldwide_guarantee: '100% Worldwide & Village Delivery Guaranteed:',
+    worldwide_desc: 'Delivering to EVERY PIN code & Gram Panchayat across India via India Post Speed Post, and across 195+ countries worldwide via DHL/FedEx.',
+    apply_btn: 'Apply Location',
+
+    footer_col_1: 'Get to Know Us',
+    footer_col_2: 'Make Money with Us',
+    footer_col_3: 'Payment Products',
+    footer_col_4: 'Let Us Help You',
     back_to_top: 'Back to top ↑',
     footer_tagline: '© 2026 UdaanMart. All rights reserved.'
   },
+
   es: {
     name: 'Español',
     flag: '🇪🇸',
@@ -116,18 +226,69 @@ const UDAAN_TRANSLATIONS = {
     cart: 'Cesta',
     add_to_cart: 'Añadir a la cesta',
     buy_now: '⚡ Comprar ya',
+    quickview: 'Vista rápida 👁️',
+
+    hero_tag_1: '⚡ Mega Ofertas',
+    hero_title_1: 'Electrónica y Dispositivos Inteligentes',
+    hero_desc_1: 'Ahorra hasta un 60% en audio premium, televisores 4K y smartphones con envío rápido.',
+    hero_cta_1a: 'Comprar Electrónica →',
+    hero_cta_1b: '⚡ Ofertas Flash',
+
+    hero_tag_2: '✨ Moda y Estilo',
+    hero_title_2: 'Mejora tu estilo diario',
+    hero_desc_2: 'Ropa de diseño, relojes de lujo, zapatillas y accesorios para hombre y mujer.',
+    hero_cta_2a: 'Ver Moda →',
+    hero_cta_2b: 'Relojes y Bolsos',
+
+    hero_tag_3: '🇮🇳 Artesanía UdaanMart',
+    hero_title_3: 'Directo de maestros artesanos',
+    hero_desc_3: 'Auténticas sedas Banarasi, calzado artesanal y cerámica tradicional.',
+    hero_cta_3a: 'Apoyar Artesanos →',
+    hero_cta_3b: 'Ver Telar',
+
+    tile_1_title: '👗 Ropa y Moda Diaria',
+    tile_1_link: 'Ver camisas, vestidos y jeans →',
+    tile_2_title: '🍳 Hogar y Cocina',
+    tile_2_link: 'Explorar sartenes y cafeteras →',
+    tile_3_title: '💄 Belleza y Cuidado Personal',
+    tile_3_link: 'Ver Dyson, cremas y afeitadoras →',
+    tile_4_title: '🏋️ Deportes y Vida Activa',
+    tile_4_link: 'Ver pesas, Garmin y yoga →',
+    tile_5_title: '💻 Portátiles y Tecnología',
+    tile_5_link: 'Ver MacBook Pro y cámaras →',
+    tile_6_title: '🎧 Audio Pro y Altavoces',
+    tile_6_link: 'Auriculares Sony y altavoces Bose →',
+    tile_7_title: '🏠 Hogar Inteligente',
+    tile_7_link: 'Robots aspiradores y Echo →',
+    tile_8_title: '🎮 Gaming Pro y Relojes',
+    tile_8_link: 'Ver PS5 y relojes de lujo →',
+
     deal_title: '⚡ Ofertas del Día',
     deal_sub: 'Grandes descuentos por tiempo limitado en tecnología y moda',
-    deal_ends: 'Termina en:',
-    free_delivery_claim: 'Envío GRATIS disponible',
-    quickview: 'Vista rápida 👁️',
-    choose_location: 'Selecciona tu ubicación de entrega',
-    worldwide_guarantee: '🌍 Garantía de entrega global en más de 195 países:',
-    worldwide_desc: 'Entregamos en todas las ciudades y pueblos del mundo con servicio postal y mensajería exprés garantizada.',
-    apply_btn: 'Aplicar',
+
+    cart_drawer_title: 'Cesta de Compra',
+    cart_empty_title: 'Tu cesta está vacía',
+    cart_empty_desc: 'Tu cesta de compras te espera con grandes ofertas en tecnología y moda.',
+    cart_empty_btn: 'Empezar a comprar',
+    cart_subtotal: 'Subtotal:',
+    cart_checkout_btn: 'Tramitar pedido →',
+
+    btn_to_payment: 'Continuar al pago →',
+    btn_place_order: 'Confirmar pedido y pagar 🔒',
+
+    choose_location: '🌍 Selecciona tu ubicación de entrega',
+    worldwide_guarantee: '100% Garantía de Entrega Global y Rural:',
+    worldwide_desc: 'Entrega en más de 195 países y 155,000+ pueblos y códigos postales con mensajería exprés.',
+    apply_btn: 'Aplicar ubicación',
+
+    footer_col_1: 'Conócenos',
+    footer_col_2: 'Gana dinero con nosotros',
+    footer_col_3: 'Métodos de pago',
+    footer_col_4: 'Ayuda y soporte',
     back_to_top: 'Volver arriba ↑',
     footer_tagline: '© 2026 UdaanMart. Todos los derechos reservados.'
   },
+
   fr: {
     name: 'Français',
     flag: '🇫🇷',
@@ -157,18 +318,69 @@ const UDAAN_TRANSLATIONS = {
     cart: 'Panier',
     add_to_cart: 'Ajouter au panier',
     buy_now: '⚡ Acheter cet article',
+    quickview: 'Aperçu 👁️',
+
+    hero_tag_1: '⚡ Méga Économies',
+    hero_title_1: 'High-Tech & Gadgets Intelligents',
+    hero_desc_1: 'Jusqu’à 60% de réduction sur l’audio premium, les téléviseurs 4K et smartphones avec livraison express.',
+    hero_cta_1a: 'Acheter Électronique →',
+    hero_cta_1b: '⚡ Ventes Flash',
+
+    hero_tag_2: '✨ Mode & Style',
+    hero_title_2: 'Sublimez votre style quotidien',
+    hero_desc_2: 'Découvrez les collections homme et femme, montres de luxe et accessoires de créateurs.',
+    hero_cta_2a: 'Explorer la mode →',
+    hero_cta_2b: 'Montres et Sacs',
+
+    hero_tag_3: '🇮🇳 Artisans UdaanMart',
+    hero_title_3: 'En direct des maîtres artisans',
+    hero_desc_3: 'Saris en soie pure, chaussures traditionnelles et céramiques artisanales.',
+    hero_cta_3a: 'Soutenir les artisans →',
+    hero_cta_3b: 'Voir tissages',
+
+    tile_1_title: '👗 Vêtements & Mode',
+    tile_1_link: 'Chemises, robes et jeans →',
+    tile_2_title: '🍳 Maison & Cuisine',
+    tile_2_link: 'Appareils et ustensiles →',
+    tile_3_title: '💄 Beauté & Soins',
+    tile_3_link: 'Dyson, soins et rasoirs →',
+    tile_4_title: '🏋️ Sport & Fitness',
+    tile_4_link: 'Haltères, montres et yoga →',
+    tile_5_title: '💻 Ordinateurs & Tech',
+    tile_5_link: 'MacBook Pro et appareils photo →',
+    tile_6_title: '🎧 Audio Pro & Enceintes',
+    tile_6_link: 'Casques Sony et enceintes Bose →',
+    tile_7_title: '🏠 Maison Connectée',
+    tile_7_link: 'Robots aspirateurs et Echo →',
+    tile_8_title: '🎮 Gaming Pro & Luxe',
+    tile_8_link: 'Consoles PS5 et montres →',
+
     deal_title: '⚡ Ventes Flash du Jour',
     deal_sub: 'Réductions exceptionnelles pour une durée limitée',
-    deal_ends: 'Se termine dans :',
-    free_delivery_claim: 'Livraison GRATUITE disponible',
-    quickview: 'Aperçu 👁️',
-    choose_location: 'Choisissez votre lieu de livraison',
-    worldwide_guarantee: '🌍 Livraison garantie dans le monde entier (195+ pays) :',
-    worldwide_desc: 'Livraison express à domicile dans tous les pays et zones rurales par transporteur postal international.',
-    apply_btn: 'Appliquer',
+
+    cart_drawer_title: 'Votre Panier',
+    cart_empty_title: 'Votre panier est vide',
+    cart_empty_desc: 'Votre panier attend vos articles préférés. Découvrez nos offres spéciales.',
+    cart_empty_btn: 'Commencer mes achats',
+    cart_subtotal: 'Sous-total :',
+    cart_checkout_btn: 'Passer la commande →',
+
+    btn_to_payment: 'Continuer vers le paiement →',
+    btn_place_order: 'Confirmer la commande et payer 🔒',
+
+    choose_location: '🌍 Choisissez votre lieu de livraison',
+    worldwide_guarantee: '100% Garantie de Livraison Mondiale :',
+    worldwide_desc: 'Livraison express à domicile dans plus de 195 pays et 155 000+ codes postaux ruraux.',
+    apply_btn: 'Appliquer le lieu',
+
+    footer_col_1: 'À propos',
+    footer_col_2: 'Vendez avec nous',
+    footer_col_3: 'Moyens de paiement',
+    footer_col_4: 'Besoin d’aide ?',
     back_to_top: 'Haut de page ↑',
     footer_tagline: '© 2026 UdaanMart. Tous droits réservés.'
   },
+
   de: {
     name: 'Deutsch',
     flag: '🇩🇪',
@@ -198,18 +410,69 @@ const UDAAN_TRANSLATIONS = {
     cart: 'Einkaufswagen',
     add_to_cart: 'In den Einkaufswagen',
     buy_now: '⚡ Jetzt kaufen',
+    quickview: 'Schnellansicht 👁️',
+
+    hero_tag_1: '⚡ Mega-Rabatte',
+    hero_title_1: 'Top-Elektronik & Smart Gadgets',
+    hero_desc_1: 'Bis zu 60% Rabatt auf Premium-Audio, 4K-TVs und Smartphones mit kostenlosem Expressversand.',
+    hero_cta_1a: 'Elektronik entdecken →',
+    hero_cta_1b: '⚡ Blitzangebote',
+
+    hero_tag_2: '✨ Mode & Lifestyle',
+    hero_title_2: 'Heben Sie Ihren Stil hervor',
+    hero_desc_2: 'Herren- und Damenmode, Designer-Uhren, Schuhe und Accessoires.',
+    hero_cta_2a: 'Mode entdecken →',
+    hero_cta_2b: 'Uhren & Taschen',
+
+    hero_tag_3: '🇮🇳 UdaanMart Kunsthandwerk',
+    hero_title_3: 'Direkt von traditionellen Meistern',
+    hero_desc_3: 'Echte Banarasi-Seide, traditionelle Schuhe und handgefertigte Keramik.',
+    hero_cta_3a: 'Handwerk unterstützen →',
+    hero_cta_3b: 'Kollektion ansehen',
+
+    tile_1_title: '👗 Mode & Kleidung',
+    tile_1_link: 'Hemden, Kleider und Jeans →',
+    tile_2_title: '🍳 Küche & Haushalt',
+    tile_2_link: 'Kochgeschirr und Kaffeemaschinen →',
+    tile_3_title: '💄 Beauty & Körperpflege',
+    tile_3_link: 'Dyson, Pflege und Rasierer →',
+    tile_4_title: '🏋️ Sport & Fitness',
+    tile_4_link: 'Hanteln, Uhren und Matten →',
+    tile_5_title: '💻 Laptops & Technik',
+    tile_5_link: 'MacBook Pro und Kameras →',
+    tile_6_title: '🎧 Audio & Lautsprecher',
+    tile_6_link: 'Sony Kopfhörer und Bose Lautsprecher →',
+    tile_7_title: '🏠 Smart Home Geräte',
+    tile_7_link: 'Saugroboter und Echo Geräte →',
+    tile_8_title: '🎮 Pro Gaming & Uhren',
+    tile_8_link: 'PS5 Konsolen und Luxusuhren →',
+
     deal_title: '⚡ Angebote des Tages',
     deal_sub: 'Stark reduzierte Blitzangebote für Elektronik und Mode',
-    deal_ends: 'Endet in:',
-    free_delivery_claim: 'Kostenlose Lieferung verfügbar',
-    quickview: 'Schnellansicht 👁️',
-    choose_location: 'Lieferadresse wählen',
-    worldwide_guarantee: '🌍 Weltweite Liefergarantie in über 195 Länder:',
-    worldwide_desc: 'Wir liefern zuverlässig per Express-Kurier und Post in alle Städte und ländlichen Regionen weltweit.',
-    apply_btn: 'Übernehmen',
+
+    cart_drawer_title: 'Einkaufswagen',
+    cart_empty_title: 'Ihr Einkaufswagen ist leer',
+    cart_empty_desc: 'Ihr Einkaufswagen wartet auf tolle Angebote und Produkte.',
+    cart_empty_btn: 'Jetzt einkaufen',
+    cart_subtotal: 'Zwischensumme:',
+    cart_checkout_btn: 'Zur Kasse gehen →',
+
+    btn_to_payment: 'Weiter zur Zahlungsmethode →',
+    btn_place_order: 'Bestellung absenden und bezahlen 🔒',
+
+    choose_location: '🌍 Lieferadresse wählen',
+    worldwide_guarantee: '100% Weltweite Liefergarantie:',
+    worldwide_desc: 'Zuverlässige Lieferung in über 195 Länder und 155.000+ ländliche Postleitzahlen per Kurier und Expresspost.',
+    apply_btn: 'Adresse übernehmen',
+
+    footer_col_1: 'Über uns',
+    footer_col_2: 'Geld verdienen mit uns',
+    footer_col_3: 'Zahlungsarten',
+    footer_col_4: 'Hilfe & Kontakt',
     back_to_top: 'Nach oben ↑',
     footer_tagline: '© 2026 UdaanMart. Alle Rechte vorbehalten.'
   },
+
   ja: {
     name: '日本語',
     flag: '🇯🇵',
@@ -239,18 +502,69 @@ const UDAAN_TRANSLATIONS = {
     cart: 'カート',
     add_to_cart: 'カートに入れる',
     buy_now: '⚡ 今すぐ購入',
+    quickview: 'クイックビュー 👁️',
+
+    hero_tag_1: '⚡ 特大メガセール',
+    hero_title_1: '最新家電・スマートガジェット',
+    hero_desc_1: '高級ヘッドホン、4Kテレビ、スマートフォンが最大60%OFF。即日無料配送。',
+    hero_cta_1a: '家電を見る →',
+    hero_cta_1b: '⚡ タイムセール',
+
+    hero_tag_2: '✨ ファッション＆ライフスタイル',
+    hero_title_2: '毎日のスタイルをアップグレード',
+    hero_desc_2: 'メンズ＆レディースの注目ブランド、高級時計、スニーカー、アクセサリー。',
+    hero_cta_2a: 'ファッションを見る →',
+    hero_cta_2b: '時計・バッグ',
+
+    hero_tag_3: '🇮🇳 職人手作りコレクション',
+    hero_title_3: '伝統職人による手織り・手作り品',
+    hero_desc_3: '本場シルクサリー、職人手作りシューズ、ジャイプル陶器を産地直送。',
+    hero_cta_3a: '職人を応援する →',
+    hero_cta_3b: '手織り品を見る',
+
+    tile_1_title: '👗 ファッション＆日常着',
+    tile_1_link: 'シャツ、ワンピース、デニム →',
+    tile_2_title: '🍳 キッチン＆生活用品',
+    tile_2_link: '調理器具、コーヒーメーカー →',
+    tile_3_title: '💄 美容・スキンケア',
+    tile_3_link: 'ダイソン、コスメ、シェーバー →',
+    tile_4_title: '🏋️ スポーツ＆フィットネス',
+    tile_4_link: 'ダンベル、ガーミン、ヨガマット →',
+    tile_5_title: '💻 高性能PC・カメラ',
+    tile_5_link: 'MacBook Pro、iPad、カメラ →',
+    tile_6_title: '🎧 プロオーディオ・スピーカー',
+    tile_6_link: 'ソニー製イヤホン＆ボーズ →',
+    tile_7_title: '🏠 スマート家電・ロボット掃除機',
+    tile_7_link: 'ロボット掃除機＆スマートスピーカー →',
+    tile_8_title: '🎮 プロゲーム＆高級時計',
+    tile_8_link: 'PS5本体＆ラグジュアリー時計 →',
+
     deal_title: '⚡ 本日の特大タイムセール',
     deal_sub: '人気ガジェット・ファッションの数量限定特別割引',
-    deal_ends: '終了まであと:',
-    free_delivery_claim: '無料配送が利用可能です',
-    quickview: 'クイックビュー 👁️',
-    choose_location: 'お届け先を選択',
-    worldwide_guarantee: '🌍 世界195カ国＆全地域へのドアステップ配達保証:',
-    worldwide_desc: '世界中すべての郵便番号、郡部、村落へ国際スピード郵便および宅配便で確実にお届けします。',
-    apply_btn: '設定する',
+
+    cart_drawer_title: 'ショッピングカート',
+    cart_empty_title: 'カートは空です',
+    cart_empty_desc: '現在カートに商品はありません。お得なタイムセール商品をご覧ください。',
+    cart_empty_btn: 'お買い物を続ける',
+    cart_subtotal: '小計 (税込):',
+    cart_checkout_btn: 'レジに進む →',
+
+    btn_to_payment: 'お支払い方法へ進む →',
+    btn_place_order: '注文を確定して支払う 🔒',
+
+    choose_location: '🌍 お届け先を選択',
+    worldwide_guarantee: '100% ドアステップ配達保証:',
+    worldwide_desc: '日本全国すべての市町村・農村部、および世界195カ国へ国際スピード郵便および宅配便で確実にお届けします。',
+    apply_btn: '場所を設定する',
+
+    footer_col_1: '会社概要',
+    footer_col_2: '出品について',
+    footer_col_3: 'お支払い方法',
+    footer_col_4: 'ヘルプ＆サポート',
     back_to_top: 'トップへ戻る ↑',
     footer_tagline: '© 2026 UdaanMart. 無断転載を禁じます。'
   },
+
   ar: {
     name: 'العربية',
     flag: '🇦🇪',
@@ -280,15 +594,65 @@ const UDAAN_TRANSLATIONS = {
     cart: 'عربة التسوق',
     add_to_cart: 'أضف إلى السلة',
     buy_now: '⚡ اشتري الآن',
+    quickview: 'نظرة سريعة 👁️',
+
+    hero_tag_1: '⚡ عروض كبرى توفيرية',
+    hero_title_1: 'أفضل الإلكترونيات والأجهزة الذكية',
+    hero_desc_1: 'وفر حتى 60% على السماعات والشاشات والهواتف الذكية مع توصيل سريع ومجاني.',
+    hero_cta_1a: 'تسوق الإلكترونيات →',
+    hero_cta_1b: '⚡ عروض خاطفة',
+
+    hero_tag_2: '✨ الأزياء والأناقة',
+    hero_title_2: 'ارتق بأسلوبك اليومي',
+    hero_desc_2: 'تشكيلة راقية للرجال والنساء، ساعات فاخرة وأحذية وإكسسوارات أنيقة.',
+    hero_cta_2a: 'استكشف الأزياء →',
+    hero_cta_2b: 'ساعات وحقائب',
+
+    hero_tag_3: '🇮🇳 منتجات حرفية تقليدية',
+    hero_title_3: 'مباشرة من أمهر الحرفيين الريفيين',
+    hero_desc_3: 'أوشحة وساري حرير طبيعي 100%، أحذية تقليدية، وخزف وفخار يدوي.',
+    hero_cta_3a: 'ادعم الحرفيين →',
+    hero_cta_3b: 'تصفح المشغولات',
+
+    tile_1_title: '👗 الأزياء والملابس اليومية',
+    tile_1_link: 'تسوق القمصان والفساتين والجينز →',
+    tile_2_title: '🍳 مستلزمات المنزل والمطبخ',
+    tile_2_link: 'أواني الطهي ومحضرات القهوة →',
+    tile_3_title: '💄 الجمال والعناية الشخصية',
+    tile_3_link: 'منتجات دايسون وكريمات العناية →',
+    tile_4_title: '🏋️ الرياضة والرشاقة البدنية',
+    tile_4_link: 'الأثقال وساعات جارمن واليوغا →',
+    tile_5_title: '💻 حواسيب وأجهزة فائقة الأداء',
+    tile_5_link: 'أجهزة ماك بوك وآيباد وكاميرات →',
+    tile_6_title: '🎧 أنظمة الصوت والسماعات',
+    tile_6_link: 'سماعات سوني ومكبرات بوز →',
+    tile_7_title: '🏠 الأجهزة المنزلية والروبوتات',
+    tile_7_link: 'مكانس روبوت وأجهزة إيكو →',
+    tile_8_title: '🎮 ألعاب الفيديو والساعات الفاخرة',
+    tile_8_link: 'أجهزة PS5 وشاشات وساعات فاخرة →',
+
     deal_title: '⚡ عروض اليوم المميزة',
     deal_sub: 'خصومات حصرية ولفترة محدودة على أفضل المنتجات',
-    deal_ends: 'ينتهي العرض بعد:',
-    free_delivery_claim: 'توصيل مجاني متوفر',
-    quickview: 'نظرة سريعة 👁️',
-    choose_location: 'اختر موقع التوصيل الخاص بك',
-    worldwide_guarantee: '🌍 ضمان التوصيل لجميع دول العالم (195+ دولة):',
+
+    cart_drawer_title: 'عربة التسوق',
+    cart_empty_title: 'عربة التسوق فارغة',
+    cart_empty_desc: 'عربة التسوق تنتظر اختيارك للمنتجات والعروض المميزة.',
+    cart_empty_btn: 'ابدأ التسوق الآن',
+    cart_subtotal: 'المجموع الفرعي:',
+    cart_checkout_btn: 'متابعة الشراء والتوصيل →',
+
+    btn_to_payment: 'المتابعة لاختيار طريقة الدفع →',
+    btn_place_order: 'تأكيد الطلب والدفع 🔒',
+
+    choose_location: '🌍 اختر موقع التوصيل',
+    worldwide_guarantee: 'ضمان التوصيل لجميع دول العالم 100%:',
     worldwide_desc: 'نقوم بالتوصيل لجميع المدن والقرى والمناطق الريفية والنائية عبر الشحن الجوي السريع والبريد الدولي.',
-    apply_btn: 'تطبيق',
+    apply_btn: 'تطبيق الموقع',
+
+    footer_col_1: 'تعرف علينا',
+    footer_col_2: 'كن شريكاً واكسب معنا',
+    footer_col_3: 'طرق الدفع والشراء',
+    footer_col_4: 'المساعدة والدعم',
     back_to_top: 'العودة إلى الأعلى ↑',
     footer_tagline: '© 2026 UdaanMart. جميع الحقوق محفوظة.'
   }
@@ -328,7 +692,7 @@ class UdaanI18nEngine {
 
     const dict = this.translations[lang];
 
-    // 1. Update Navigation texts
+    // 1. Navigation Header
     this.setTextSafe('.delivery-line-1', dict.deliver_to);
     this.setAttrSafe('#navbar-search-input', 'placeholder', dict.search_placeholder);
     this.setTextSafe('#nav-account-btn .nav-item-small', dict.hello_account);
@@ -356,18 +720,84 @@ class UdaanI18nEngine {
     this.setTextSafe('.nav-sub-item[data-filter-category="fashion"]', dict.luxury);
     this.setTextSafe('#nav-wishlist-link', dict.wishlist);
 
-    // 3. Deals banner
+    // 3. Hero Carousel Slides
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    if (heroSlides && heroSlides.length >= 3) {
+      // Slide 1
+      this.setTextSafeElement(heroSlides[0].querySelector('.hero-tag'), dict.hero_tag_1);
+      this.setTextSafeElement(heroSlides[0].querySelector('.hero-title'), dict.hero_title_1);
+      this.setTextSafeElement(heroSlides[0].querySelector('.hero-desc'), dict.hero_desc_1);
+      const s1Btns = heroSlides[0].querySelectorAll('.hero-cta-btn');
+      if (s1Btns[0]) s1Btns[0].textContent = dict.hero_cta_1a;
+      if (s1Btns[1]) s1Btns[1].textContent = dict.hero_cta_1b;
+
+      // Slide 2
+      this.setTextSafeElement(heroSlides[1].querySelector('.hero-tag'), dict.hero_tag_2);
+      this.setTextSafeElement(heroSlides[1].querySelector('.hero-title'), dict.hero_title_2);
+      this.setTextSafeElement(heroSlides[1].querySelector('.hero-desc'), dict.hero_desc_2);
+      const s2Btns = heroSlides[1].querySelectorAll('.hero-cta-btn');
+      if (s2Btns[0]) s2Btns[0].textContent = dict.hero_cta_2a;
+      if (s2Btns[1]) s2Btns[1].textContent = dict.hero_cta_2b;
+
+      // Slide 3
+      this.setTextSafeElement(heroSlides[2].querySelector('.hero-tag'), dict.hero_tag_3);
+      this.setTextSafeElement(heroSlides[2].querySelector('.hero-title'), dict.hero_title_3);
+      this.setTextSafeElement(heroSlides[2].querySelector('.hero-desc'), dict.hero_desc_3);
+      const s3Btns = heroSlides[2].querySelectorAll('.hero-cta-btn');
+      if (s3Btns[0]) s3Btns[0].textContent = dict.hero_cta_3a;
+      if (s3Btns[1]) s3Btns[1].textContent = dict.hero_cta_3b;
+    }
+
+    // 4. Category Quad Cards
+    const tiles = document.querySelectorAll('.tile-card');
+    if (tiles && tiles.length >= 8) {
+      for (let i = 1; i <= 8; i++) {
+        const titleKey = `tile_${i}_title`;
+        const linkKey = `tile_${i}_link`;
+        const card = tiles[i - 1];
+        if (card) {
+          const tEl = card.querySelector('.tile-title');
+          const lEl = card.querySelector('.tile-link');
+          if (tEl && dict[titleKey]) tEl.textContent = dict[titleKey];
+          if (lEl && dict[linkKey]) lEl.textContent = dict[linkKey];
+        }
+      }
+    }
+
+    // 5. Deals of the Day Banner
     this.setTextSafe('.deal-banner-heading', dict.deal_title);
     this.setTextSafe('.deal-banner-sub', dict.deal_sub);
 
-    // 4. Modal headers
+    // 6. Cart Drawer
+    this.setTextSafe('.cart-drawer-title', dict.cart_drawer_title);
+    this.setTextSafe('.cart-empty-title', dict.cart_empty_title);
+    this.setTextSafe('.cart-empty-desc', dict.cart_empty_desc);
+    this.setTextSafe('.cart-drawer-empty .amz-btn-primary', dict.cart_empty_btn);
+    this.setTextSafe('.cd-subtotal-label', dict.cart_subtotal);
+    this.setTextSafe('#cart-drawer-checkout-btn', dict.cart_checkout_btn);
+
+    // 7. Checkout Wizard Buttons
+    this.setTextSafe('#btn-to-payment', dict.btn_to_payment);
+    this.setTextSafe('#btn-place-order', dict.btn_place_order);
+
+    // 8. Location Modal
     this.setTextSafe('#location-modal .modal-title', dict.choose_location);
     this.setTextSafe('#location-guarantee-heading', dict.worldwide_guarantee);
     this.setTextSafe('#location-guarantee-desc', dict.worldwide_desc);
     this.setTextSafe('#btn-apply-location', dict.apply_btn);
-    this.setTextSafe('#footer-back-to-top', dict.back_to_top);
 
-    // 5. Update Language dropdown in navbar
+    // 9. Footer
+    const footerColTitles = document.querySelectorAll('.footer-col-title');
+    if (footerColTitles.length >= 4) {
+      footerColTitles[0].textContent = dict.footer_col_1;
+      footerColTitles[1].textContent = dict.footer_col_2;
+      footerColTitles[2].textContent = dict.footer_col_3;
+      footerColTitles[3].textContent = dict.footer_col_4;
+    }
+    this.setTextSafe('#footer-back-to-top', dict.back_to_top);
+    this.setTextSafe('.footer-bottom-bar div:first-child', dict.footer_tagline);
+
+    // 10. Update Language Dropdown in Navbar
     const langSelect = document.getElementById('language-selector');
     if (langSelect) {
       langSelect.value = lang;
@@ -377,13 +807,13 @@ class UdaanI18nEngine {
       langFlag.textContent = dict.flag;
     }
 
-    // 6. Refresh product catalog cards (translates "Add to Cart", "Buy Now", badges)
+    // 11. Refresh product catalog cards (translates "Add to Cart", "⚡ Buy Now", "Quick View")
     if (window.amzSearchFilter) {
       window.amzSearchFilter.refreshCatalog();
     }
 
     if (announce && window.amzCart) {
-      window.amzCart.showToast(`${dict.flag} Language changed to ${dict.name}!`, 'info');
+      window.amzCart.showToast(`${dict.flag} Language updated to ${dict.name}!`, 'info');
     }
   }
 
@@ -391,6 +821,10 @@ class UdaanI18nEngine {
     if (!text) return;
     const el = document.querySelector(selector);
     if (el) el.textContent = text;
+  }
+
+  setTextSafeElement(el, text) {
+    if (el && text) el.textContent = text;
   }
 
   setAttrSafe(selector, attr, val) {

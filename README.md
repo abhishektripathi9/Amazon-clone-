@@ -1,27 +1,17 @@
-# 🛒 UdaanMart - E-Commerce Platform
+# 🛍️ UdaanMart — Ultra-Modern Indian Heritage & Lifestyle Marketplace
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/abhishektripathi9/Amazon-clone-)
+[![Live Website](https://img.shields.io/badge/Live_Storefront-UdaanMart-amber?style=for-the-badge&logo=google-chrome)](https://abhishektripathi9.github.io/Amazon-clone-/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Active-success?style=for-the-badge&logo=github)](https://abhishektripathi9.github.io/Amazon-clone-/)
 
-An enterprise-grade, ultra-modern **UdaanMart Platform** powered by **Three.js WebGL 3D graphics, real-time 360° product inspection, 60fps card tilt physics, 1-Click Express Buy, UPI/International Payments, and a Seller Central Studio**. Built specifically to demonstrate full-stack e-commerce frontend engineering to freelancing clients.
+An enterprise-grade, ultra-modern **UdaanMart E-Commerce Marketplace** inspired by authentic Indian craft heritage and next-level luxury lifestyle standards. Featuring real-time **Seller Onboarding & Karigar Studio, 1-Click Express Buy, India Post Village Delivery to 155,000+ PIN Codes, Slide-Out "Your Bag / आपकी थैली" Cart Drawer, GI-Tag Provenance Assurance, and GST Tax Invoicing**.
 
 ---
 
-## 🚀 Live Deployment on Render
+## 🌐 Live Storefront & Deployment
 
-This project is configured for **1-Click Instant Deployment** on [Render](https://render.com) using Render Blueprints (`render.yaml`).
-
-### Option 1: One-Click Deploy (Render Blueprint)
-1. Go to [Render Dashboard](https://dashboard.render.com/) and click **New +** → **Blueprint**.
-2. Connect your GitHub repository: `abhishektripathi9/Amazon-clone-`.
-3. Render will automatically detect `render.yaml` and provision a fast, free CDN Static Site with 100% uptime!
-
-### Option 2: Static Site Deploy (Free & Fast Global CDN)
-1. In Render Dashboard, click **New +** → **Static Site**.
-2. Connect `abhishektripathi9/Amazon-clone-`.
-3. Configure settings:
-   - **Build Command:** *(leave blank or `npm run build`)*
-   - **Publish Directory:** `.` *(current directory)*
-4. Click **Create Static Site**. Your live URL will be ready in under 30 seconds!
+- **Live URL:** [https://abhishektripathi9.github.io/Amazon-clone-/](https://abhishektripathi9.github.io/Amazon-clone-/)
+- **Repository:** [https://github.com/abhishektripathi9/Amazon-clone-](https://github.com/abhishektripathi9/Amazon-clone-)
+- **Portfolio Integration:** [https://github.com/abhishektripathi9/Abhishek_Portfolio](https://github.com/abhishektripathi9/Abhishek_Portfolio)
 
 ---
 
